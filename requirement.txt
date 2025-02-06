@@ -1,0 +1,8 @@
+pip install streamlit,
+pip install openai,
+pip install langchain
+pip install langchain_experimental
+pip install pandas
+pip install tabulate
+pip install azure-ai-openai
+pip install pydantic
