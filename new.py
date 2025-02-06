@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 from langchain_openai import AzureChatOpenAI
 from langchain.agents.agent_types import AgentType
@@ -60,12 +60,12 @@ if uploaded_file:
         if "salary distribution" in user_question.lower():
             # Generate the Salary Distribution Plot
             st.write("📊 Salary Distribution Plot:")
-            # fig, ax = plt.subplots(figsize=(10, 6))
-            # sns.histplot(df['MonthlyIncome'], bins=30, kde=True, ax=ax)
-            # ax.set_title('Salary Distribution')
-            # ax.set_xlabel('Monthly Income')
-            # ax.set_ylabel('Frequency')
-            # st.pyplot(fig)
+            fig, ax = plt.subplots(figsize=(10, 6))
+            sns.histplot(df['MonthlyIncome'], bins=30, kde=True, ax=ax)
+            ax.set_title('Salary Distribution')
+            ax.set_xlabel('Monthly Income')
+            ax.set_ylabel('Frequency')
+            st.pyplot(fig)
         else:
             # Create the LangChain agent with allow_dangerous_code=True
             agent = create_pandas_dataframe_agent(
