@@ -20,8 +20,12 @@ st.markdown("""
         #     margin: 0;
         #     padding: 0;
         # }
+        body, .stApp {
+            background-color:rgb(186, 221, 228);  /* Light Blue Background */
+            color: black !important;  /* Black Font Color */
+        }
         .stTextInput, .stFileUploader {
-            width: 45% !important;
+            width:80%!important;
         }
         .section {
             margin-bottom: 0.1%;
@@ -31,18 +35,18 @@ st.markdown("""
 
 # Streamlit UI Setup
 st.title("📊 HR Dashboard")
-st.markdown("<h2>Enter Your URL or Upload Your File</h2>", unsafe_allow_html=True)
+st.markdown("<h2>Upload your file </h2>", unsafe_allow_html=True)
+                    
+# # URL Input Section
+# st.subheader("🔍 Enter URL")
+# st.markdown('<div class="section">', unsafe_allow_html=True)
+# url_input = st.text_input("🌐 Enter a URL (e.g., Yahoo Finance):")
+# st.markdown('</div>', unsafe_allow_html=True)
 
-# URL Input Section
-st.subheader("🔍 Enter URL")
-st.markdown('<div class="section">', unsafe_allow_html=True)
-url_input = st.text_input("🌐 Enter a URL (e.g., Yahoo Finance):")
-st.markdown('</div>', unsafe_allow_html=True)
-
-if url_input:
-    user_question_url = st.text_input("💬 Ask a question related to the URL:")
-    if user_question_url:
-        st.write(f"🔎 You asked about: {user_question_url}")
+# if url_input:
+#     user_question_url = st.text_input("💬 Ask a question related to the URL:")
+#     if user_question_url:
+#         st.write(f"🔎 You asked about: {user_question_url}")
 
 # File Upload Section
 st.subheader("📂 Upload Your Data File")
